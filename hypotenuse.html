@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Hypotenuse Finder</title>
+
+    <style>
+        #header {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            width: 340px;
+        }
+
+        #header h3, label, p {
+            font-family: 'Shanti', sans-serif;
+            font-weight: bold;
+        }
+
+        #user_form {
+            margin-left: auto;
+            margin-right: auto;
+            width: 340px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="header">
+        <h3>Hypotenuse Finder</h3>
+        <hr>
+    </div>
+    
+    <div id="user_form">
+        <form action="/hypotenuse" method="post">
+
+            <div class="form-group">
+                <label>Enter Length: </label> <br>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="user_length" placeholder="ex : 3" oninvalid="this.setCustomValidity('Enter Length')" oninput="this.setCustomValidity('')" required>
+                <small id="emailHelp" class="form-text text-muted"> * Input should be in cm.</small>
+            </div>
+              <div class="form-group">
+                <label>Enter Base: </label> <br>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="user_base" placeholder="ex : 4" oninvalid="this.setCustomValidity('Enter Base')" oninput="this.setCustomValidity('')" required>
+                <small id="emailHelp" class="form-text text-muted"> * Input should be in cm.</small>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Submit">
+
+        </form>
+
+        {% if hypotenuse %}
+            <hr>
+            <div class="alert alert-info">
+                <p> Hypotenuse is {{hypotenuse}}.</p>
+            </div>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
