@@ -16,4 +16,4 @@ def find_hypo():
     return render_template("hypotenuse.html", hypotenuse=hypotenuse)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
